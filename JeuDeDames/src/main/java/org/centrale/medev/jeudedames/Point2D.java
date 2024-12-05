@@ -45,7 +45,7 @@ public class Point2D {
     }
     
     public double distance(Point2D p){
-        double d = Math.sqrt((this.x-p.x)*(this.x-p.x)-(this.x-p.x)*(this.x-p.x));
+        double d = Math.sqrt((this.x-p.x)*(this.x-p.x)+(this.y-p.y)*(this.y-p.y));
         return d;
     }
     

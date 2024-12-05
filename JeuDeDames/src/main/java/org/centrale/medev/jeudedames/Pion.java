@@ -33,7 +33,7 @@ public class Pion {
      * méthode de déplacement du pion
      */
     public void deplacer(int x, int y, Plateau p){
-        if(x<p.getPlateau()[0].length && y<p.getPlateau()[0].length ){
+        if(x<p.getPlateau()[0].length && y<p.getPlateau()[0].length){
             p.getPlateau()[this.pos.getX()][this.pos.getY()]=".";
             p.getPlateau()[x][y]=type;
 
@@ -67,14 +67,14 @@ public class Pion {
      * @param p : pion
      * @param pl : plateau dans lequel on joue
      */
-    public void prise(Pion p, Plateau pl){
+    public void prise(Pion p, Plateau pl) throws Exception{
         if(this.pos.distance(p.pos)>sqrt(2) && this.type.charAt(0)==p.type.charAt(0)){
-            System.out.println("Prise impossible pour ce pion");
+            throw new Exception("Prise impossible car soit le pion est loin, soit il est du même type");
         }
         else{
             Point2D new_pos = new Point2D(2*(p.pos.getX()-this.pos.getX()),2*(p.pos.getX()-this.pos.getX())); 
             if(!pl.getPlateau()[new_pos.getX()][new_pos.getY()].equals(".")){
-                System.out.println("Prise impossible pour ce pion");
+                throw new Exception("Prise impossible car soit la position est occupée soit elle déborde les limites du plateau");
             }
             else{
                 p.pos.setX(new_pos.getX());
