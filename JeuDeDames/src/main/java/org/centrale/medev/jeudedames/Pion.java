@@ -31,6 +31,9 @@ public class Pion {
     
     /**
      * méthode de déplacement du pion
+     * @param x
+     * @param y
+     * @param p
      */
     public void deplacer(int x, int y, Plateau p){
         if(x<p.getSize() && y<p.getSize() ){
@@ -81,6 +84,22 @@ public class Pion {
                 p.pos.setY(new_pos.getY());
             }
         }
+    }
+    
+    public boolean deplacementValide(int x, int y, Plateau p) {
+        
+        if (x < 0 || y < 0 || x >= p.getSize() || y >= p.getSize()) return false;
+        
+        int val1 = Math.abs(x - this.pos.getX());
+        
+        int val2 = Math.abs(y - this.pos.getY());
+        
+        if (val1 != val2) return false;
+        
+        if (!p.getPlateau()[x][y].equals(".")) return false;
+        if (this.type.equals("B") && x <= this.pos.getX()) return false;
+        if (this.type.equals("N") && x >= this.pos.getX()) return false;
+       return true;
     }
     
     

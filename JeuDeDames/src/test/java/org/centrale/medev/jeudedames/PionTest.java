@@ -32,13 +32,16 @@ public class PionTest {
         Plateau plateau = new Plateau(); 
         plateau.init();
         Pion pionBlanc = new Pion(new Point2D(1,1), "B");
-        Pion pionNoir = new Pion(new Point2D(6,6), "N"); 
+        //Pion pionNoir = new Pion(new Point2D(6,6), "N"); 
         
         pionBlanc.deplacer(2, 2, plateau);
         assertEquals(2, pionBlanc.getPos().getX()); 
         assertEquals(2, pionBlanc.getPos().getY()); 
         assertEquals("B", plateau.getPlateau()[2][2]);
         assertEquals(".", plateau.getPlateau()[1][1]); 
+        
+        //deplacement hors plateau
+        assertTrue(pionBlanc.deplacementValide(10,7,plateau));
     }
 
     
