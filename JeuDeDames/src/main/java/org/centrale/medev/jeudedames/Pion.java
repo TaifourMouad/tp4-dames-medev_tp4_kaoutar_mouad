@@ -33,7 +33,7 @@ public class Pion {
      * méthode de déplacement du pion
      */
     public void deplacer(int x, int y, Plateau p){
-        if(x<p.getPlateau()[0].length && y<p.getPlateau()[0].length ){
+        if(x<p.getSize() && y<p.getSize() ){
             p.getPlateau()[this.pos.getX()][this.pos.getY()]=".";
             p.getPlateau()[x][y]=type;
 
