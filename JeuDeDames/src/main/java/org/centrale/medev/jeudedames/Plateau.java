@@ -40,16 +40,30 @@ public class Plateau {
         }
         
         //on remplisse la plateau avec nos pion
-        for(int i=0; i<5; i++){
+        for(int i=1; i<5; i++){
             for(int j=0; j<=9; j=j+2){
-                blancs.add(new Pion(new Point2D(i,j),"blanc"));
-                plateau[i][j]="blanc";
-                noirs.add(new Pion(new Point2D(9-i,9-j),"noir"));
-                plateau[9-i][9-j]="noir";
+                blancs.add(new Pion(new Point2D(i,j+(i%2)),"B"));
+                plateau[i-1][j+(i%2)]="B";
+                
+                noirs.add(new Pion(new Point2D(9-i,9-j-(i%2)),"N"));
+                plateau[9-i+1][9-j-(i%2)]="N";
             }
         }
     }
     
+    
+    /**
+     * Cette méthode affiche notre plateau
+     */
+    public void afficher(){
+        System.out.println("Affichage du plateau :");
+        for(int i=0; i<10; i++){
+            for(int j=0; j<10; j++){
+                System.out.print(plateau[i][j] + " ");
+            }
+            System.out.println("");
+        }
+    }
     
     
     
