@@ -14,13 +14,17 @@ public class Point2D {
      * x: position selon l'axe horizental 
      * y: position suivant l'axe vertical 
      */
-    int x;
-    int y;
+    private int x;
+    private int y;
     
     //constructeur
     public Point2D(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+    
+    public Point2D(){
+        
     }
     
     //getter et setter
@@ -40,6 +44,9 @@ public class Point2D {
         this.y = y;
     }
     
-    
+    public double distance(Point2D p){
+        double d = Math.sqrt((this.x-p.x)*(this.x-p.x)-(this.x-p.x)*(this.x-p.x));
+        return d;
+    }
     
 }

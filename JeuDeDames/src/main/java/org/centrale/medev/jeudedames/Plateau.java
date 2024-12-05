@@ -19,6 +19,30 @@ public class Plateau {
     private String[][] plateau;
     private ArrayList<Pion> blancs;
     private ArrayList<Pion> noirs;
+
+    public String[][] getPlateau() {
+        return plateau;
+    }
+
+    public void setPlateau(String[][] plateau) {
+        this.plateau = plateau;
+    }
+
+    public ArrayList<Pion> getBlancs() {
+        return blancs;
+    }
+
+    public void setBlancs(ArrayList<Pion> blancs) {
+        this.blancs = blancs;
+    }
+
+    public ArrayList<Pion> getNoirs() {
+        return noirs;
+    }
+
+    public void setNoirs(ArrayList<Pion> noirs) {
+        this.noirs = noirs;
+    }
     
     
     public Plateau() {
