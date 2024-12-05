@@ -15,10 +15,14 @@ public class Plateau {
      * 
      * plateau : un tableau de dimension 10x10
      */
-    
+    private final int size=10;
     private String[][] plateau;
     private ArrayList<Pion> blancs;
     private ArrayList<Pion> noirs;
+
+    public int getSize() {
+        return size;
+    }
 
     public String[][] getPlateau() {
         return plateau;
@@ -46,7 +50,7 @@ public class Plateau {
     
     
     public Plateau() {
-        plateau = new String[10][10];
+        plateau = new String[size][size];
         blancs = new ArrayList<>();
         noirs = new ArrayList<>();
     }

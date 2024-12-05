@@ -31,9 +31,12 @@ public class Pion {
     
     /**
      * méthode de déplacement du pion
+     * @param x
+     * @param y
+     * @param p
      */
     public void deplacer(int x, int y, Plateau p){
-        if(x<p.getPlateau()[0].length && y<p.getPlateau()[0].length){
+        if(x<p.getSize() && y<p.getSize() ){
             p.getPlateau()[this.pos.getX()][this.pos.getY()]=".";
             p.getPlateau()[x][y]=type;
 
@@ -77,8 +80,8 @@ public class Pion {
                 throw new Exception("Prise impossible car soit la position est occupée soit elle déborde les limites du plateau");
             }
             else{
-                p.pos.setX(new_pos.getX());
-                p.pos.setY(new_pos.getY());
+                this.pos.setX(new_pos.getX());
+                this.pos.setY(new_pos.getY());
                 pl.getPlateau()[this.pos.getX()][this.pos.getX()]=".";
                 pl.getPlateau()[new_pos.getX()][new_pos.getY()]=this.type;
                 if(p.type.charAt(0)=='B')
@@ -87,6 +90,22 @@ public class Pion {
                     pl.getNoirs().remove(p);
             }
         }
+    }
+    
+    public boolean deplacementValide(int x, int y, Plateau p) {
+        
+        if (x < 0 || y < 0 || x >= p.getSize() || y >= p.getSize()) return false;
+        
+        int val1 = Math.abs(x - this.pos.getX());
+        
+        int val2 = Math.abs(y - this.pos.getY());
+        
+        if (val1 != val2) return false;
+        
+        if (!p.getPlateau()[x][y].equals(".")) return false;
+        if (this.type.equals("B") && x <= this.pos.getX()) return false;
+        if (this.type.equals("N") && x >= this.pos.getX()) return false;
+       return true;
     }
     
     
