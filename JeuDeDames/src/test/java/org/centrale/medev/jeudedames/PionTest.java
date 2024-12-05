@@ -51,12 +51,20 @@ public class PionTest {
     @org.junit.jupiter.api.Test
     public void testPrise() {
         System.out.println("prise");
-        Pion p = null;
-        Plateau pl = null;
-        Pion instance = new Pion();
-        instance.prise(p, pl);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Plateau plateau = new Plateau();
+        plateau.init();
+        
+        Pion pionBlanc = new Pion(new Point2D(2, 2), "B");
+        Pion pionNoir = new Pion(new Point2D(3, 3), "N");
+
+        plateau.getBlancs().add(pionBlanc);
+        plateau.getNoirs().add(pionNoir);
+        
+        pionBlanc.prise(pionNoir, plateau);
+        
+        assertEquals(4, pionNoir.getPos().getX());
+        assertEquals(4, pionNoir.getPos().getY());
+        
     }
     
 }
