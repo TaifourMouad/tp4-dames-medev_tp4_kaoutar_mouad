@@ -11,9 +11,32 @@ package org.centrale.medev.jeudedames;
 public class Pion {
     //Attributs de la classe
     /**
-     * 
+     * pos : position du pion dans le plateau
+     * type : type du pion (blanc, noir, dame blanc, dame noir)
      */
-    int x;
-    int y;
+    private Point2D pos;
+    private String type;
+
+    public Pion(Point2D pos, String type) {
+        this.pos = pos;
+        this.type = type;
+    }
+    
+    public Pion(){
+        
+    }
+    
+    /**
+     * méthode de déplacement du pion
+     */
+    public void deplacer(int x,int y){
+        this.pos.x=x;
+        this.pos.y=y;
+    }
+    
+    /**
+     * méthode de déplacement du pion
+     */
+    //public void 
     
 }

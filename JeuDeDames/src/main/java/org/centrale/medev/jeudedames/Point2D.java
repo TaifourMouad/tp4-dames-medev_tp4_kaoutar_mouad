@@ -40,11 +40,6 @@ public class Point2D {
         this.y = y;
     }
     
-    /**
-     * méthode
-     */
-    public void deplacer(int x,int y){
-        this.x=x;
-        this.y=y;
-    }
+    
+    
 }
