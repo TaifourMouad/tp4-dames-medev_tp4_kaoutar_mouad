@@ -79,6 +79,12 @@ public class Pion {
             else{
                 p.pos.setX(new_pos.getX());
                 p.pos.setY(new_pos.getY());
+                pl.getPlateau()[this.pos.getX()][this.pos.getX()]=".";
+                pl.getPlateau()[new_pos.getX()][new_pos.getY()]=this.type;
+                if(p.type.charAt(0)=='B')
+                    pl.getBlancs().remove(p);
+                else
+                    pl.getNoirs().remove(p);
             }
         }
     }
