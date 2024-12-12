@@ -31,7 +31,7 @@
         <maven.compiler.target>17</maven.compiler.target>
         <exec.mainClass>org.centrale.medev.jeudedames.JeuDeDames</exec.mainClass>
         
-        <sonar.organization>TaifourMouad</sonar.organization> 
+        <sonar.organization>taifourmouad</sonar.organization> 
         <sonar.host.url>https://sonarcloud.io</sonar.host.url> 
     </properties>
 </project>
